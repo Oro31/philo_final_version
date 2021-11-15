@@ -67,6 +67,8 @@ int	ft_is_int(char *str)
 {
 	if (str == NULL)
 		return (0);
+	if (!ft_is_num(str))
+		return (0);
 	if (ft_strlen(str) < 10)
 		return (1);
 	else if (ft_strlen(str) > 10)
