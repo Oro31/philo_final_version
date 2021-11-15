@@ -24,7 +24,8 @@ void	ft_wait(struct timeval start, long ttw, t_philo *philo)
 
 	ret = gettimeofday(&t, NULL);
 	while (ft_timediff(start, t) < ttw
-		&& !ft_is_philo_dead(philo->last_meal, philo))
+		&& !ft_is_philo_dead(philo->last_meal, philo)
+	      	&& !ret)
 		ret = gettimeofday(&t, NULL);
 	if (ft_is_philo_dead(philo->last_meal, philo))
 	{
