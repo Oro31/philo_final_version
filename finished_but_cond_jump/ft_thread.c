@@ -18,8 +18,11 @@ int	ft_is_philo_dead(struct timeval last_meal, t_philo *philo)
 	int				ret;
 
 	ret = gettimeofday(&t, NULL);
-	if (ft_timediff(last_meal, t) > philo->ttd)
-		return (1);
+	if (!ret)
+	{
+		if (ft_timediff(last_meal, t) > philo->ttd)
+			return (1);
+	}
 	return (0);
 }
 
